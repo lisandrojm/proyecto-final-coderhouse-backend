@@ -43,7 +43,7 @@
       </div>
     </header>
     <div class='container pt-4 text-center mb-5'>
-      <div class='section_products'>
+      <div class='admin_dashboard'>
         <div class='table-responsive border border-light border-1 p-4 mt-2'>
           <h3 class='text-center pb-2'>Detalle de Usuarios</h3>
           <table id='product-table' class='table table-bordered table-striped table-sm'>
@@ -81,8 +81,14 @@
               {{/each}}
             </tbody>
           </table>
-          <div class='text-start'>
+          <div class='d-flex justify-content-center align-items-center mt-4'>
+            <span class='m-2'>**</span>
+            <a id='deleteInactiveUsers' class='btn btn-danger' href='#' role='button'>Eliminar Usuarios inactivos</a>
+          </div>
+          <div class='text-start mt-3'>
             <p class='text-secondary'>* Como user role "admin" solo puedes eliminar usuarios con role "user" y "premium" . No puedes eliminar users con role "admin"</p>
+            <p class='text-secondary'>** Elimina a el/los usuario/s que no hayan tenido conexión en los últimos 2 días y le/s envía un correo indicando que su cuenta ha sido eliminada por inactividad.
+            </p>
           </div>
         </div>
         <div class='d-flex flex-column flex-md-row justify-content-center align-items-top border border-light p-4 mt-4'>

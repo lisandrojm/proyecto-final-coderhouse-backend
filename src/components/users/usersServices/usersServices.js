@@ -436,7 +436,9 @@ class UsersServices {
 
   deleteInactiveUsers = async (req, res) => {
     try {
-      const twoDaysAgo = new Date(Date.now() - 1 * 60 * 1000);
+      /* Para realizar el testing de la eliminación de usuarios inactivos puedes cambiar el tiempo a 1 minuto con: */
+      /* const twoDaysAgo = new Date(Date.now() - 1 * 60 * 1000);  */
+      const twoDaysAgo = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
       const inactiveUsers = await User.find({ last_connection: { $lt: twoDaysAgo } });
       const inactiveUserEmails = inactiveUsers.map((user) => user.email);
       if (inactiveUserEmails.length > 0) {
@@ -483,7 +485,7 @@ class UsersServices {
         }
       } else {
         req.logger.info('→ No se encontraron usuarios inactivos para eliminar de la base de datos');
-        return res.sendSuccess('No se encontraron usuarios inactivos');
+        return res.sendNotFound('No se encontraron usuarios inactivos');
       }
       return res.sendServerError('Error al eliminar usuarios inactivos');
     } catch (error) {

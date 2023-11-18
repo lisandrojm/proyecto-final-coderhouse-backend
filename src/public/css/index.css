@@ -36,6 +36,10 @@ a {
   z-index: -1;
   margin-top: 80px;
 }
+.admin_dashboard {
+  z-index: -1;
+  margin-top: 100px;
+}
 .section_carts {
   z-index: -1;
   margin-top: 70px;

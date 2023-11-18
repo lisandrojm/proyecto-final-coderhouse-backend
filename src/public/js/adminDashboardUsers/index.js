@@ -180,3 +180,29 @@ socket.on('deleteUser', deleteUserRow);
 socket.on('totalUsersUpdate', (totalUsers) => {
   document.getElementById('totalUsersValue').innerText = totalUsers;
 });
+
+const deleteInactiveUsers = document.getElementById('deleteInactiveUsers');
+deleteInactiveUsers.addEventListener('click', async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('/api/users/', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        roles: ['ADMIN'],
+      }),
+    });
+    if (response.ok) {
+      swal('¡Usuarios eliminados exitosamente!', '', 'success').then(function () {
+        window.location.reload();
+      });
+    } else {
+      swal('No se han eliminado usuarios inactivos', '', 'info');
+      console.error('No se encontraron usuarios inactivos');
+    }
+  } catch (error) {
+    console.error('Error en la solicitud POST:', error);
+  }
+});
