@@ -44,7 +44,7 @@ Es importante tener en cuenta que aunque se ha implementado la inicialización p
 
 ## Documentación extra
 
-- [Swagger](https://proyecto-final-production-e7eb.up.railway.app/api-docs//) (En desarrollo.)
+- [Swagger](https://proyecto-final-production-e7eb.up.railway.app/api-docs/) (En desarrollo.)
 
 ## Variables de entorno
 
