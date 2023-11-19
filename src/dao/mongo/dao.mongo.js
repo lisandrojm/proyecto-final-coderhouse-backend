@@ -7,7 +7,7 @@ const req = require('../../utils/logger/loggerSetup');
 class MongoDAO {
   constructor(model) {
     this.model = model;
-    this.defaultTimeout = 50000;
+    this.defaultTimeout = 30000;
   }
 
   setDefaultTimeout(timeout) {
