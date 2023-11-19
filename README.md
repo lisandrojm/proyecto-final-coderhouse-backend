@@ -96,6 +96,42 @@ Se integraron los diferentes desafíos del programa en el desarrollo de una APIr
 | `MONGO_URL_ATLAS`      | URL de conexión a MongoDB para entorno de producción (Atlas). |
 | `DB_NAME`              | Nombre de la base de datos en MongoDB.                        |
 
+## Configuración del Entorno y Persistencia de datos.
+
+- El servidor se configura utilizando el gestor de comandos Commander para especificar el ambiente de ejecución y el tipo de persistencia.
+
+- Los ejemplos de comandos disponibles son:
+
+  ```bash
+  node index.js -m development -p MONGO
+  ```
+
+  ```bash
+  node index.js -m production -p MEMORY
+  ```
+
+  ```bash
+  node index.js -m staging -p FILESYSTEM
+
+  ```
+
+- \*Los comandos se pueden combinar.Tanto las diferentes variables de entorno como las distintas capas de persistencia.
+
+# Uso Recomendado
+
+Para un funcionamiento completo del sistema, se recomienda utilizar las variables de entorno en modo "development" junto con la capa de persistencia "MONGO".
+
+```bash
+node index.js -m development -p MONGO
+```
+
+Es importante tener en cuenta que aunque se ha implementado la inicialización para los entornos "production" y "staging" junto con las capas de persistencia "MEMORY" y "FILESYSTEM", la funcionalidad completa de estos entornos será implementada en futuras actualizaciones.
+
+<small>Directorio/s de referencia</small>
+
+- `/src/config/index.js`: Configuración de la aplicación.
+- `/src/dao/factory.js`: Configuración de persistencia.
+
 ## Enlace al sitio activo
 
 - [Deploy en Render](https://proyecto-final-production-e7eb.up.railway.app/) (Funcionalidad Front-end básica)
