@@ -228,11 +228,7 @@ npm install
 
 - Configura la conexión a la base de datos MongoDB y todas las variables de entorno. (Ver [Variables de entorno](#env))
 
-```bash
-cp .env.example .env
-```
-
-Asegúrate de tener MongoDB en ejecución , la URL de conexión correcta y todas las variables de entorno configuradas.
+- Asegúrate de tener MongoDB en ejecución , la URL de conexión correcta y todas las variables de entorno configuradas.
 
 - Inicia la aplicación con el siguiente comando:
 
