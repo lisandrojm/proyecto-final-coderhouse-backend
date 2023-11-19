@@ -22,11 +22,11 @@ const req = require('../../../utils/logger/loggerSetup');
 const faker = require('faker');
 
 class UsersServices {
-  /*   constructor() {
+  constructor() {
     this.createUsersIfNotExists(req);
-  } */
+  }
 
-  /*   createUsersIfNotExists = async () => {
+  createUsersIfNotExists = async () => {
     const usersToCreate = [
       { email: 'admin@correo.com', firstName: 'admin', role: 'admin' },
       { email: 'user@correo.com', firstName: 'user', role: 'user' },
@@ -60,7 +60,7 @@ class UsersServices {
         } catch (error) {}
       }
     }
-  }; */
+  };
 
   getPrincipalDataUser = async (req, res) => {
     try {
