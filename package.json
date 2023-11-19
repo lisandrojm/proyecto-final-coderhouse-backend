@@ -1,7 +1,7 @@
 {
   "name": "proyecto_final",
   "version": "1.0.0",
-  "description": "Proyecto final del curso de desarrollo Back-End de Coderhouse",
+  "description": "Proyecto final del curso de desarrollo Backend de Coderhouse",
   "main": "index.js",
   "scripts": {
     "test": "mocha",

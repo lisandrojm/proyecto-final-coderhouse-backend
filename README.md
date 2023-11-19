@@ -440,7 +440,6 @@ El proyecto utiliza las siguientes dependencias:
 - **Twilio (v4.16.0):** Biblioteca para enviar y recibir mensajes de texto y realizar llamadas telefónicas a través de la API de Twilio.
 - **Nodemailer (v6.9.4):** Biblioteca para enviar correos electrónicos desde una aplicación Node.js.
 - **Faker (v5.5.3):** Biblioteca para generar datos falsos como nombres, direcciones, correos electrónicos, etc., útil para pruebas y desarrollo.
-- **@hapi/boom (v10.0.1):** Biblioteca para manejar errores HTTP de una manera más consistente y amigable.
 - **winston (v3.10.0):** Biblioteca para el registro de registros (logs) en Node.js.
 - **Swagger-jsdoc (v6.2.8):** Biblioteca para generar documentación de API utilizando comentarios en el código fuente.
 - **Swagger-ui-express (v5.0.0):** Biblioteca para renderizar la documentación de Swagger de forma interactiva en una aplicación Express..
