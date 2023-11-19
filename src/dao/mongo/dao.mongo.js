@@ -2,6 +2,8 @@
 /* src/dao/mongo/dao.mongo.js */
 /* ************************************************************************** */
 
+const req = require('../../utils/logger/loggerSetup');
+
 class MongoDAO {
   constructor(model) {
     this.model = model;
@@ -18,6 +20,7 @@ class MongoDAO {
       const result = await document.save();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO create::', error);
       throw new Error(`Error en MongoDAO create: ${error.message}`);
     }
   }
@@ -31,6 +34,7 @@ class MongoDAO {
       const result = await query.exec();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO findById:', error);
       throw new Error(`Error en MongoDAO findById: ${error.message}`);
     }
   }
@@ -44,6 +48,7 @@ class MongoDAO {
       const result = await query.exec();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO findByIdAndUpdate:', error);
       throw new Error(`Error en MongoDAO findByIdAndUpdate: ${error.message}`);
     }
   }
@@ -59,6 +64,7 @@ class MongoDAO {
       const result = await query.exec();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO findByIdAndDelete:', error);
       throw new Error(`Error en MongoDAO findByIdAndDelete: ${error.message}`);
     }
   }
@@ -72,6 +78,7 @@ class MongoDAO {
       const result = await findOneQuery.exec();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO findOne:', error);
       throw new Error(`Error en MongoDAO findOne: ${error.message}`);
     }
   }
@@ -85,6 +92,7 @@ class MongoDAO {
       const result = await findQuery.exec();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO findAll:', error);
       throw new Error(`Error en MongoDAO findAll: ${error.message}`);
     }
   }
@@ -100,6 +108,7 @@ class MongoDAO {
       const result = await document.save();
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO save:', error);
       throw new Error(`Error en MongoDAO save: ${error.message}`);
     }
   }
@@ -115,6 +124,7 @@ class MongoDAO {
       const count = await countQuery.exec();
       return count;
     } catch (error) {
+      req.logger.error('Error en MongoDAO countDocuments:', error);
       throw new Error(`Error en MongoDAO countDocuments: ${error.message}`);
     }
   }
@@ -136,6 +146,7 @@ class MongoDAO {
 
       return paginationData;
     } catch (error) {
+      req.logger.error('Error en MongoDAO paginateData:', error);
       throw new Error(`Error in MongoDAO paginateData: ${error.message}`);
     }
   }
@@ -145,6 +156,7 @@ class MongoDAO {
       const result = await this.model.deleteOne(query);
       return result;
     } catch (error) {
+      req.logger.error('Error en MongoDAO deleteOne:', error);
       throw new Error(`Error en MongoDAO deleteOne: ${error.message}`);
     }
   }

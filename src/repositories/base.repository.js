@@ -11,17 +11,17 @@ class BaseRepository {
     this.Dao = new Dao(model);
   }
 
-  create = async (data) => {
+  async create(data) {
     try {
       const newItem = await this.Dao.create(data);
       return newItem;
     } catch (error) {
       req.logger.error('Error en el método "create" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "create" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  findById = async (id) => {
+  async findById(id) {
     try {
       const item = await this.Dao.findById(id);
       if (!item) {
@@ -30,11 +30,11 @@ class BaseRepository {
       return item;
     } catch (error) {
       req.logger.error('Error en el método "findById" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "findById" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  findByIdAndUpdate = async (id, data) => {
+  async findByIdAndUpdate(id, data) {
     try {
       const updatedItem = await this.Dao.findByIdAndUpdate(id, data);
       if (!updatedItem) {
@@ -43,11 +43,11 @@ class BaseRepository {
       return updatedItem;
     } catch (error) {
       req.logger.error('Error en el método "findByIdAndUpdate" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "findByIdAndUpdate" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  findByIdAndDelete = async (id) => {
+  async findByIdAndDelete(id) {
     try {
       const deletedItem = await this.Dao.findByIdAndDelete(id);
       if (!deletedItem) {
@@ -55,42 +55,42 @@ class BaseRepository {
       }
       return deletedItem;
     } catch (error) {
-      req.logger.error('Error en el método "findByAndDelete" de BaseRepository:', error);
-      throw error;
+      req.logger.error('Error en el método "findByIdAndDelete" de BaseRepository:', error);
+      throw new Error(`Error en el método "findByIdAndDelete" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  findOne = async (query) => {
+  async findOne(query) {
     try {
       const item = await this.Dao.findOne(query);
       return item;
     } catch (error) {
       req.logger.error('Error en el método "findOne" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "findOne" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  findAll = async () => {
+  async findAll() {
     try {
       const items = await this.Dao.findAll();
       return items;
     } catch (error) {
       req.logger.error('Error en el método "findAll" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "findAll" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  countDocuments = async (query) => {
+  async countDocuments(query) {
     try {
       const count = await this.Dao.countDocuments(query);
       return count;
     } catch (error) {
       req.logger.error('Error en el método "countDocuments" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "countDocuments" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  paginate = async (query = {}, options = {}) => {
+  async paginate(query = {}, options = {}) {
     try {
       const { page = 1, limit = 10, sort = {} } = options;
 
@@ -121,21 +121,21 @@ class BaseRepository {
       };
     } catch (error) {
       req.logger.error('Error en el método "paginate" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "paginate" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  save = async (data) => {
+  async save(data) {
     try {
       const saveItem = await this.Dao.save(data);
       return saveItem;
     } catch (error) {
       req.logger.error('Error en el método "save" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "save" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 
-  deleteOne = async (query) => {
+  async deleteOne(query) {
     try {
       const deletedItem = await this.Dao.deleteOne(query);
       if (deletedItem.deletedCount === 0) {
@@ -144,9 +144,9 @@ class BaseRepository {
       return deletedItem;
     } catch (error) {
       req.logger.error('Error en el método "deleteOne" de BaseRepository:', error);
-      throw error;
+      throw new Error(`Error en el método "deleteOne" de BaseRepository: ${error.message}`);
     }
-  };
+  }
 }
 
 module.exports = BaseRepository;
