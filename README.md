@@ -307,6 +307,34 @@ premium@correo.com
 1111
 ```
 
+## [STRIPE](https://www.linkedin.com/in/lisandrojm/) - Datos ficticios para simular el pago con tarjeta de crédito:
+
+#### Card Number:
+
+```
+4242424242424242
+```
+
+#### MM/YY :
+
+```
+1234
+```
+
+\* 12/34
+
+#### CVC :
+
+```
+567
+```
+
+#### ZIP :
+
+```
+89123
+```
+
 ## Testing - Mocha + Chai + Supertest
 
 - Realización de módulos de testing para el proyecto principal, utilizando los módulos de mocha, chai y supertest.
@@ -428,29 +456,25 @@ Estas dependencias pueden ser instaladas ejecutando el comando `npm install` en 
 
 ## Postman Collections
 
-- En la carpeta `postman_collections`, encontrarás los archivos necesarios para importar las colecciones en Postman y realizar pruebas en el proyecto. Las colecciones proporcionan ejemplos de solicitudes HTTP para interactuar con la API y probar su funcionalidad.
+- En la carpeta `postman_collections`, encontrarás el archivo necesario `proyecto_final.postman_collection.json` para importar la colección `proyecto_final` en Postman y realizar pruebas en el proyecto. Los métodos que lo requieren proporcionan ejemplos de solicitudes HTTP para interactuar con la API y probar su funcionalidad.
 
 - Importante: Como el proyecto cuenta con un Middleware de autorización se deben realizar los siguientes pasos en Postman para tener acceso a los endpoints:
 
-  1.0 - Ir a la colección proyecto_final/components/auth/login e ingresar las credenciales que correspondan de acuerdo al role que necesitas para acceder al endpoint (Ver credenciales de users con roles asignadospara Testings.)
+  - Ir a la colección proyecto_final/components/auth/login e ingresar las credenciales que correspondan de acuerdo al role que necesitas para acceder al endpoint (Ver credenciales de users con roles asignados para Testings.)
 
-  1.0 - Ir a Postman/Headers/Cookies/Manage Cookies.
+  - Copiar el token obtenido
 
-  2.0 - Type a domain name:localhost.
+  - Ir a Postman/Headers/Cookies/Manage Cookies.
 
-  3.0 - Template: Cookie_5=value; Path=/; Expires=Sun, 01 Sep 2024 22:47:37 GMT;
+    - Add domain.
 
-  3.1 - Loguearse como Admin o como User según corresponda para testear la ruta.
+    - Type a domain name: localhost.
 
-  3.2 - Una vez logueado ingresar a Application/Cookies/http://localhost:8080 y copiar el value del token jwt.
+    - Add Cookie : Cambiar Cookie_1=value por jwt=value (debido a que el nombre de la cookie es jwt).
 
-  3.3 - En el Template de la cookie de Postman reemplazar Cookie_5 por jwt y value por el value del token copiado.
+    - Debe quedar un código como el siguiente (el token a continuación es un ejemplo) : jwt=ey123456789wolrtjlwkjt.eyJfaWQiOiI2NGY3YzBkY2ZmMzY2NmQ4YTdjMDA0MDciLCJlbWFpbCI6InVzZXJAY29ycmVvLmNvbSIsInJvbGUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiJ1c2VyIiwibGFzdF9uYW1lIjoidXNlciIsImFnZSI6MzMsImNhcnQiOiI2NGY3YzBkY2ZmMzY2NmQ4YTdjMDA0MDkiLCJpYXQiOjE2OTQwNTU5OTgsImV4cCI6MTY5NDE0MjM5OH0.hIYn2frVQCVNBMGI5E4sRkTqCTBhSHQ0Th0uSOUtabc; Path=/; Expires=Fri, 06 Sep 2024 03:12:07 GMT;
 
-  3.4 - Debe quedar un código como el siguiente (el token a continuación es un ejemplo):
-
-  jwt=ey123456789wolrtjlwkjt.eyJfaWQiOiI2NGY3YzBkY2ZmMzY2NmQ4YTdjMDA0MDciLCJlbWFpbCI6InVzZXJAY29ycmVvLmNvbSIsInJvbGUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiJ1c2VyIiwibGFzdF9uYW1lIjoidXNlciIsImFnZSI6MzMsImNhcnQiOiI2NGY3YzBkY2ZmMzY2NmQ4YTdjMDA0MDkiLCJpYXQiOjE2OTQwNTU5OTgsImV4cCI6MTY5NDE0MjM5OH0.hIYn2frVQCVNBMGI5E4sRkTqCTBhSHQ0Th0uSOUtabc; Path=/; Expires=Fri, 06 Sep 2024 03:12:07 GMT;
-
-  3.5 - Ten en cuenta que los tokens de las cookies expiran por lo que para realizar varios tests debes volver a loguearte y copiar y pegar el token en la cookie de Postman.
+  - Ten en cuenta que los tokens de las cookies expiran por lo que para realizar varios tests debes volver a loguearte y copiar y pegar el token en la cookie de Postman.
 
 ## Enlace al sitio activo
 
