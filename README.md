@@ -16,6 +16,14 @@ Utilización del almacenamiento de tokens JWT en cookies, mejorando la seguridad
 
 Se implementó la funcionalidad completa de Crear, Leer, Actualizar y Eliminar (CRUD) para la gestión eficiente de usuarios, productos y carritos.
 
+### Factory
+
+Implementación de la configuración de persistencia utilizando el patrón Factory
+
+### DAO
+
+Interacción directa con la fuente de datos. Proporciona métodos para realizar operaciones CRUD.
+
 ### Logger - Winston
 
 Incorporación de Winston para la gestión de logs, mejorando la capacidad de seguimiento y depuración del sistema.
@@ -44,6 +52,10 @@ Incorporación de una pasarela de pago segura utilizando Stripe, permitiendo tra
 
 Integración de Passport y session para permitir la autenticación de usuarios a través de GitHub.
 
+### Repository
+
+Actúa como un intermediario entre la capa de servicios y la capa de datos (DAO). Proporciona una interfaz simplificada para que los servicios interactúen con la base de datos sin necesidad de conocer los detalles de implementación de la persistencia.
+
 ### Ruteo avanzado - Custom Responses y restricción de parámetros
 
 Ruteo avanzado que incluye respuestas personalizadas y restricciones de parámetros, mejorando la robustez y seguridad del sistema.
@@ -66,7 +78,7 @@ Sistema de roles y políticas utilizando Handle Policies para gestionar con prec
 
 Se llevó a cabo la incorporación de Websockets en un chat general y en vistas del administrador, proporcionando una comunicación bidireccional en tiempo real.
 
-## Requerimientos específicos de la entrega del proyecto final :
+## Requerimientos específicos de la entrega :
 
 ### Router /api/users - rutas
 
@@ -113,7 +125,7 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
     - `src/components/products/productsController/productsController.js`: Controlador del método deleteProduct.
     - `src/components/products/serviceController/serviceController.js`: Servicios del método deleteProduct.
 
-### Objetivos específicos
+## Objetivos específicos de la entrega=
 
 - Implementación de las vistas necesarias para la realización del flujo completo de compra.
 - Realización de una experiencia de compra completa.
