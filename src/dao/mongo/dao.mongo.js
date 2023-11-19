@@ -4,8 +4,6 @@
 
 const req = require('../../utils/logger/loggerSetup');
 
-const req = require('../../utils/logger/loggerSetup');
-
 class MongoDAO {
   constructor(model) {
     this.model = model;
