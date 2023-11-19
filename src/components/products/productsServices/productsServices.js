@@ -255,6 +255,7 @@ class ProductsServices {
         };
         try {
           await MailManager.sendEmail(emailPayload);
+          req.logger.info(`Mail enviado al user Premium ${ownerUser.email} informando la eliminación de su producto`);
         } catch (error) {
           console.error('Error al enviar el correo electrónico:', error);
         }
