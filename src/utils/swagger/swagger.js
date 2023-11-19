@@ -15,7 +15,7 @@ const options = {
     info: {
       title: 'Freelo ECOM API',
       version: '1.0.0',
-      description: 'API para administrar un ecommerce.\n\n' + '**Autenticación:**\n' + '- Esta API utiliza un sistema de autenticación basado en tokens JWT.\n' + '- Para obtener acceso a los endpoints protegidos, realiza un inicio de sesión en el endpoint /login.\n' + '- El token JWT generado es almacenado en las cookies.\n' + "- Para autorizar solicitudes, incluye el token en el encabezado 'Authorize'.\n" + '- Cada endpoint tiene en su descripción el/los Role/s requerido/s.\n\n' + '**Enlaces útiles:**\n' + '- [GitHub](' + githubRepoLink + ') - Repositorio del proyecto.\n' + '- [Railway](' + appDeployLink + ') - Deploy del proyecto.',
+      description: 'API para administrar un ecommerce.\n\n' + '**Autenticación:**\n' + '- Esta API utiliza un sistema de autenticación basado en JSON Web Token.\n' + '- Para obtener acceso a los endpoints protegidos, realiza un inicio de sesión en el endpoint /login.\n' + '- El token JWT generado es almacenado en las cookies.\n' + "- Para autorizar solicitudes, incluye el token en el encabezado 'Authorize'.\n" + '- Cada endpoint tiene en su descripción el/los Role/s requerido/s.\n\n' + '**Enlaces útiles:**\n' + '- [GitHub](' + githubRepoLink + ') - Repositorio del proyecto.\n' + '- [Railway](' + appDeployLink + ') - Deploy del proyecto.',
     },
     security: [
       {
