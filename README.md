@@ -52,6 +52,10 @@ Incorporación de una pasarela de pago segura utilizando Stripe, permitiendo tra
 
 Integración de Passport y session para permitir la autenticación de usuarios a través de GitHub.
 
+### [Railway](https://railway.app/)
+
+Despliegue de la aplicación.
+
 ### Repository
 
 Actúa como un intermediario entre la capa de servicios y la capa de datos (DAO). Proporciona una interfaz simplificada para que los servicios interactúen con la base de datos sin necesidad de conocer los detalles de implementación de la persistencia.
