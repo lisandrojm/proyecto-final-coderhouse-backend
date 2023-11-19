@@ -217,7 +217,7 @@ git clone https://github.com/lisandrojm/desafio_cuarta_practica_integradora
 - Navega al directorio del proyecto:
 
 ```bash
-cd desafio_cuarta_practica_integradora
+cd proyecto_final
 ```
 
 - Instala las dependencias del proyecto ejecutando el siguiente comando:
