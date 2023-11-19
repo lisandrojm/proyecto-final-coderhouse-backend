@@ -125,7 +125,7 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
     - `src/components/products/productsController/productsController.js`: Controlador del método deleteProduct.
     - `src/components/products/serviceController/serviceController.js`: Servicios del método deleteProduct.
 
-## Objetivos específicos de la entrega=
+## Objetivos específicos de la entrega
 
 - Implementación de las vistas necesarias para la realización del flujo completo de compra.
 - Realización de una experiencia de compra completa.
