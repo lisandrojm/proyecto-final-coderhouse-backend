@@ -368,11 +368,29 @@ npm test
 
 - `restPerformance.json`: Archivo donde se guardan los resultados del test en formato json.
 
-### Comando para ejecutar el test con Artillery:
+### Comandos para ejecutar el test con Artillery:
+
+Para realizar pruebas de rendimiento con Artillery, sigue estos pasos:
+
+- Iniciar la Aplicación:
+
+  Ejecuta el siguiente comando en una terminal para iniciar la aplicación. Asegúrate de que la aplicación esté en ejecución antes de ejecutar las pruebas de Artillery.
 
 ```bash
-npx artillery run config.yaml --output restPerformance.jsonnpm test
+npm run dev
 ```
+
+- Ejecutar las pruebas con Artillery:
+
+  Abre otra terminal y ejecuta el siguiente comando para iniciar las pruebas con Artillery. El archivo de configuración config.yaml se utiliza para definir las especificaciones de las pruebas. Los resultados se guardarán en el archivo restPerformance.json.
+
+```bash
+npx artillery run config.yaml --output restPerformance.json
+```
+
+- Resultados de las Pruebas:
+
+  Después de ejecutar las pruebas, encontrarás los resultados en el archivo `restPerformance.json`. Puedes analizar este archivo para obtener información detallada sobre el rendimiento de la aplicación durante las pruebas.
 
 ### Estructura general del proyecto
 
