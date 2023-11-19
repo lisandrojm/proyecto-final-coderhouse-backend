@@ -131,7 +131,7 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
 - Realización de una experiencia de compra completa.
 - Detalles administrativos con los roles de usuarios implementados.
 
-## Variables de entorno
+## Variables de entorno <a name="instalacion"></a>
 
 | Variable               | Descripción                                                   |
 | ---------------------- | ------------------------------------------------------------- |
@@ -226,13 +226,13 @@ cd proyecto_final
 npm install
 ```
 
-- Configura la conexión a la base de datos MongoDB y todas las variables de entorno en el archivo `.env`. Puedes copiar el archivo `.env.example` y renombrarlo a `.env`, luego actualiza los valores con tu configuración:
+- Configura la conexión a la base de datos MongoDB y todas las variables de entorno. (Ver [Variables de entorno](#instalacion))
 
 ```bash
 cp .env.example .env
 ```
 
-Asegúrate de tener MongoDB en ejecución , la URL de conexión correcta y todas las variables de entorno configuradas en el archivo `.env`.
+Asegúrate de tener MongoDB en ejecución , la URL de conexión correcta y todas las variables de entorno configuradas.
 
 - Inicia la aplicación con el siguiente comando:
 
