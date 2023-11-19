@@ -32,7 +32,7 @@ Incorporación de Winston para la gestión de logs, mejorando la capacidad de se
 
 Implementación de Nodemailer para el envío de correos electrónicos a los usuarios después de determinadas acciones, mejorando la interacción y la comunicación con los clientes.
 
-### Manejo de errores - Customizador de errores básico
+### Manejo de errores - Customizador de errores
 
 Customizador de errores básico y un diccionario para los errores más comunes al crear un producto, mejorando la experiencia del usuario y facilitando la resolución de problemas.
 
