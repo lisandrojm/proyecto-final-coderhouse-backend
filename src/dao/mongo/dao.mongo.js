@@ -4,6 +4,8 @@
 
 const req = require('../../utils/logger/loggerSetup');
 
+const req = require('../../utils/logger/loggerSetup');
+
 class MongoDAO {
   constructor(model) {
     this.model = model;
@@ -14,151 +16,98 @@ class MongoDAO {
     this.defaultTimeout = timeout;
   }
 
-  async create(data) {
+  async withErrorHandling(promise, errorMessage) {
     try {
-      const document = new this.model(data);
-      const result = await document.save();
-      return result;
+      return await promise;
     } catch (error) {
-      req.logger.error('Error en MongoDAO create::', error);
-      throw new Error(`Error en MongoDAO create: ${error.message}`);
+      req.logger.error(`Error: ${errorMessage}`, error);
+      throw new Error(`${errorMessage}: ${error.message}`);
     }
+  }
+
+  async create(data) {
+    return this.withErrorHandling(this.model.create(data), 'Error en MongoDAO create');
   }
 
   async findById(id, populateOptions = {}) {
-    try {
-      const query = this.model.findById(id);
-      if (populateOptions.path) {
-        query.populate(populateOptions);
-      }
-      const result = await query.exec();
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO findById:', error);
-      throw new Error(`Error en MongoDAO findById: ${error.message}`);
+    const query = this.model.findById(id);
+    if (populateOptions.path) {
+      query.populate(populateOptions);
     }
+    return this.withErrorHandling(query.exec(), 'Error en MongoDAO findById');
   }
 
   async findByIdAndUpdate(id, data, populateOptions = {}) {
-    try {
-      const query = this.model.findByIdAndUpdate(id, data, { new: true });
-      if (populateOptions.path) {
-        query.populate(populateOptions);
-      }
-      const result = await query.exec();
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO findByIdAndUpdate:', error);
-      throw new Error(`Error en MongoDAO findByIdAndUpdate: ${error.message}`);
+    const query = this.model.findByIdAndUpdate(id, data, { new: true });
+    if (populateOptions.path) {
+      query.populate(populateOptions);
     }
+    return this.withErrorHandling(query.exec(), 'Error en MongoDAO findByIdAndUpdate');
   }
 
   async findByIdAndDelete(id, populateOptions = {}) {
-    try {
-      let query = this.model.findByIdAndDelete(id);
-
-      if (populateOptions.path) {
-        query = query.populate(populateOptions);
-      }
-
-      const result = await query.exec();
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO findByIdAndDelete:', error);
-      throw new Error(`Error en MongoDAO findByIdAndDelete: ${error.message}`);
+    let query = this.model.findByIdAndDelete(id);
+    if (populateOptions.path) {
+      query = query.populate(populateOptions);
     }
+    return this.withErrorHandling(query.exec(), 'Error en MongoDAO findByIdAndDelete');
   }
 
   async findOne(query = {}, populateOptions = {}) {
-    try {
-      const findOneQuery = this.model.findOne(query);
-      if (populateOptions.path) {
-        findOneQuery.populate(populateOptions);
-      }
-      const result = await findOneQuery.exec();
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO findOne:', error);
-      throw new Error(`Error en MongoDAO findOne: ${error.message}`);
+    const findOneQuery = this.model.findOne(query);
+    if (populateOptions.path) {
+      findOneQuery.populate(populateOptions);
     }
+    return this.withErrorHandling(findOneQuery.exec(), 'Error en MongoDAO findOne');
   }
 
   async findAll(query = {}, options = {}, populateOptions = {}) {
-    try {
-      const findQuery = this.model.find(query, null, options);
-      if (populateOptions.path) {
-        findQuery.populate(populateOptions);
-      }
-      const result = await findQuery.exec();
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO findAll:', error);
-      throw new Error(`Error en MongoDAO findAll: ${error.message}`);
+    const findQuery = this.model.find(query, null, options);
+    if (populateOptions.path) {
+      findQuery.populate(populateOptions);
     }
+    return this.withErrorHandling(findQuery.exec(), 'Error en MongoDAO findAll');
   }
 
   async save(data, populateOptions = {}) {
-    try {
-      const document = new this.model(data);
+    const document = new this.model(data);
 
-      if (populateOptions.path) {
-        await document.populate(populateOptions).execPopulate();
-      }
-
-      const result = await document.save();
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO save:', error);
-      throw new Error(`Error en MongoDAO save: ${error.message}`);
+    if (populateOptions.path) {
+      await document.populate(populateOptions).execPopulate();
     }
+
+    return this.withErrorHandling(document.save(), 'Error en MongoDAO save');
   }
 
   async countDocuments(query = {}, populateOptions = {}) {
-    try {
-      let countQuery = this.model.countDocuments(query);
+    let countQuery = this.model.countDocuments(query);
 
-      if (populateOptions.path) {
-        countQuery = countQuery.populate(populateOptions);
-      }
-
-      const count = await countQuery.exec();
-      return count;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO countDocuments:', error);
-      throw new Error(`Error en MongoDAO countDocuments: ${error.message}`);
+    if (populateOptions.path) {
+      countQuery = countQuery.populate(populateOptions);
     }
+
+    return this.withErrorHandling(countQuery.exec(), 'Error en MongoDAO countDocuments');
   }
 
   async paginate(query = {}, options = {}) {
-    try {
-      const { page = 1, limit = 10 } = options;
-      const skip = (page - 1) * limit;
+    const { page = 1, limit = 10 } = options;
+    const skip = (page - 1) * limit;
 
-      const findQuery = this.model.find(query).skip(skip).limit(limit);
-      const result = await findQuery.exec();
+    const findQuery = this.model.find(query).skip(skip).limit(limit);
+    const result = await findQuery.exec();
 
-      const paginationData = {
-        docs: result,
-        page: page,
-        limit: limit,
-        totalDocs: result.length,
-      };
+    const paginationData = {
+      docs: result,
+      page: page,
+      limit: limit,
+      totalDocs: result.length,
+    };
 
-      return paginationData;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO paginateData:', error);
-      throw new Error(`Error in MongoDAO paginateData: ${error.message}`);
-    }
+    return paginationData;
   }
 
   async deleteOne(query) {
-    try {
-      const result = await this.model.deleteOne(query);
-      return result;
-    } catch (error) {
-      req.logger.error('Error en MongoDAO deleteOne:', error);
-      throw new Error(`Error en MongoDAO deleteOne: ${error.message}`);
-    }
+    return this.withErrorHandling(this.model.deleteOne(query), 'Error en MongoDAO deleteOne');
   }
 }
 
