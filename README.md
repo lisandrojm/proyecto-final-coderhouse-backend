@@ -475,7 +475,7 @@ Estas dependencias pueden ser instaladas ejecutando el comando `npm install` en 
 
   - Ten en cuenta que los tokens de las cookies expiran por lo que para realizar varios tests debes volver a loguearte y copiar y pegar el token en la cookie de Postman.
 
-## Video - Experiencia completa de compra<a name="credenciales"></a>
+## Video - Experiencia completa de compra<a name="video"></a>
 
 https://github.com/lisandrojm/proyecto_final/assets/35199683/02060eff-54bf-42f6-9f4e-0f102455607d
 
