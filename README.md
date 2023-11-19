@@ -3,7 +3,7 @@
 ## Descripción
 
 El objetivo de este proyecto fue aplicar los conocimientos adquiridos durante el curso "Programación Backend" de Coderhouse.
-Se integraron los diferentes desafíos del programa, en una APIrest de un e-commerce con las siguientes características:
+Se integraron los diferentes desafíos del programa en el desarrollo de una APIrest de un e-commerce con las siguientes características:
 
 - Arquitectura SOA (Service-Oriented Architecture).
 - MongoDB.
