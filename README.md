@@ -1,5 +1,5 @@
-
 https://github.com/lisandrojm/proyecto_final/assets/35199683/c1069a92-c98d-417a-9f40-93be0493ddd4
+
 # PROYECTO FINAL - Coderhouse/Backend
 
 ## Descripción
@@ -130,7 +130,7 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
 ## Objetivos específicos de la entrega
 
 - Implementación de las vistas necesarias para la realización del flujo completo de compra.
-- Realización de una experiencia de compra completa.
+- Realización de una experiencia de compra completa. - Ver [Video](#video)
 - Detalles administrativos con los roles de usuarios implementados.
 
 ## Variables de entorno <a name="env"></a>
@@ -476,8 +476,8 @@ Estas dependencias pueden ser instaladas ejecutando el comando `npm install` en 
     - Debe quedar un código como el siguiente (el token a continuación es un ejemplo) : jwt=ey123456789wolrtjlwkjt.eyJfaWQiOiI2NGY3YzBkY2ZmMzY2NmQ4YTdjMDA0MDciLCJlbWFpbCI6InVzZXJAY29ycmVvLmNvbSIsInJvbGUiOiJhZG1pbiIsImZpcnN0X25hbWUiOiJ1c2VyIiwibGFzdF9uYW1lIjoidXNlciIsImFnZSI6MzMsImNhcnQiOiI2NGY3YzBkY2ZmMzY2NmQ4YTdjMDA0MDkiLCJpYXQiOjE2OTQwNTU5OTgsImV4cCI6MTY5NDE0MjM5OH0.hIYn2frVQCVNBMGI5E4sRkTqCTBhSHQ0Th0uSOUtabc; Path=/; Expires=Fri, 06 Sep 2024 03:12:07 GMT;
 
   - Ten en cuenta que los tokens de las cookies expiran por lo que para realizar varios tests debes volver a loguearte y copiar y pegar el token en la cookie de Postman.
-    
-## Video - Experiencia completa de compra
+
+## Video - Experiencia completa de compra<a name="credenciales"></a>
 
 https://github.com/lisandrojm/proyecto_final/assets/35199683/02060eff-54bf-42f6-9f4e-0f102455607d
 
