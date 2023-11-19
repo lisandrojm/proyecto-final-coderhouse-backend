@@ -442,13 +442,18 @@ El proyecto utiliza las siguientes dependencias:
 - **Faker (v5.5.3):** Biblioteca para generar datos falsos como nombres, direcciones, correos electrónicos, etc., útil para pruebas y desarrollo.
 - **winston (v3.10.0):** Biblioteca para el registro de registros (logs) en Node.js.
 - **Swagger-jsdoc (v6.2.8):** Biblioteca para generar documentación de API utilizando comentarios en el código fuente.
-- **Swagger-ui-express (v5.0.0):** Biblioteca para renderizar la documentación de Swagger de forma interactiva en una aplicación Express..
+- **Swagger-ui-dist (v5.10.0):** Biblioteca de distribución de Swagger UI para integrar la documentación Swagger en una aplicación web.
+- **Swagger-ui-express (v5.0.0):** Biblioteca para renderizar la documentación de Swagger de forma interactiva en una aplicación Express.
 
 ## DevDependencies
 
 El proyecto utiliza las siguientes devDependencies:
 
-- Nodemon (v2.0.22): Utilidad que monitoriza cambios en los archivos y reinicia automáticamente la aplicación.
+- **Artillery (v2.0.0-38):** Herramienta para probar el rendimiento de servicios web.
+- **Chai (v4.3.10):** Biblioteca de aserciones para Node.js y el navegador.
+- **Mocha (v10.2.0):** Marco de pruebas para Node.js.
+- **Nodemon (v3.0.1):** Utilidad que monitoriza cambios en los archivos y reinicia automáticamente la aplicación.
+- **Supertest (v6.3.3):** Biblioteca para realizar pruebas de API HTTP.
 
 Estas dependencias pueden ser instaladas ejecutando el comando `npm install` en el directorio del proyecto.
 
