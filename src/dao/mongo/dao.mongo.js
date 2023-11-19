@@ -8,47 +8,47 @@ class MongoDAO {
     this.defaultTimeout = 30000;
   }
 
-  setDefaultTimeout = (timeout) => {
+  setDefaultTimeout(timeout) {
     this.defaultTimeout = timeout;
-  };
+  }
 
-  create = async (data) => {
+  async create(data) {
     try {
       const document = new this.model(data);
       const result = await document.save();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO create: ${error.message}`;
+      throw new Error(`Error en MongoDAO create: ${error.message}`);
     }
-  };
+  }
 
-  findById = async (id, populateOptions = {}) => {
+  async findById(id, populateOptions = {}) {
     try {
       const query = this.model.findById(id);
       if (populateOptions.path) {
         query.populate(populateOptions);
       }
-      const result = await query.exec({ timeout: this.defaultTimeout });
+      const result = await query.exec();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO findById: ${error.message}`;
+      throw new Error(`Error en MongoDAO findById: ${error.message}`);
     }
-  };
+  }
 
-  findByIdAndUpdate = async (id, data, populateOptions = {}) => {
+  async findByIdAndUpdate(id, data, populateOptions = {}) {
     try {
       const query = this.model.findByIdAndUpdate(id, data, { new: true });
       if (populateOptions.path) {
         query.populate(populateOptions);
       }
-      const result = await query.exec({ timeout: this.defaultTimeout });
+      const result = await query.exec();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO findByIdAndUpdate: ${error.message}`;
+      throw new Error(`Error en MongoDAO findByIdAndUpdate: ${error.message}`);
     }
-  };
+  }
 
-  findByIdAndDelete = async (id, populateOptions = {}) => {
+  async findByIdAndDelete(id, populateOptions = {}) {
     try {
       let query = this.model.findByIdAndDelete(id);
 
@@ -56,40 +56,40 @@ class MongoDAO {
         query = query.populate(populateOptions);
       }
 
-      const result = await query.exec({ timeout: this.defaultTimeout });
+      const result = await query.exec();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO findByIdAndDelete: ${error.message}`;
+      throw new Error(`Error en MongoDAO findByIdAndDelete: ${error.message}`);
     }
-  };
+  }
 
-  findOne = async (query = {}, populateOptions = {}) => {
+  async findOne(query = {}, populateOptions = {}) {
     try {
       const findOneQuery = this.model.findOne(query);
       if (populateOptions.path) {
         findOneQuery.populate(populateOptions);
       }
-      const result = await findOneQuery.exec({ timeout: this.defaultTimeout });
+      const result = await findOneQuery.exec();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO findOne: ${error.message}`;
+      throw new Error(`Error en MongoDAO findOne: ${error.message}`);
     }
-  };
+  }
 
-  findAll = async (query = {}, options = {}, populateOptions = {}) => {
+  async findAll(query = {}, options = {}, populateOptions = {}) {
     try {
       const findQuery = this.model.find(query, null, options);
       if (populateOptions.path) {
         findQuery.populate(populateOptions);
       }
-      const result = await findQuery.exec({ timeout: this.defaultTimeout });
+      const result = await findQuery.exec();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO findAll: ${error.message}`;
+      throw new Error(`Error en MongoDAO findAll: ${error.message}`);
     }
-  };
+  }
 
-  save = async (data, populateOptions = {}) => {
+  async save(data, populateOptions = {}) {
     try {
       const document = new this.model(data);
 
@@ -100,11 +100,11 @@ class MongoDAO {
       const result = await document.save();
       return result;
     } catch (error) {
-      throw `Error en MongoDAO save: ${error.message}`;
+      throw new Error(`Error en MongoDAO save: ${error.message}`);
     }
-  };
+  }
 
-  countDocuments = async (query = {}, populateOptions = {}) => {
+  async countDocuments(query = {}, populateOptions = {}) {
     try {
       let countQuery = this.model.countDocuments(query);
 
@@ -112,20 +112,20 @@ class MongoDAO {
         countQuery = countQuery.populate(populateOptions);
       }
 
-      const count = await countQuery.exec({ timeout: this.defaultTimeout });
+      const count = await countQuery.exec();
       return count;
     } catch (error) {
-      throw `Error en MongoDAO countDocuments: ${error.message}`;
+      throw new Error(`Error en MongoDAO countDocuments: ${error.message}`);
     }
-  };
+  }
 
-  paginate = async (query = {}, options = {}) => {
+  async paginate(query = {}, options = {}) {
     try {
       const { page = 1, limit = 10 } = options;
       const skip = (page - 1) * limit;
 
       const findQuery = this.model.find(query).skip(skip).limit(limit);
-      const result = await findQuery.exec({ timeout: this.defaultTimeout });
+      const result = await findQuery.exec();
 
       const paginationData = {
         docs: result,
@@ -136,18 +136,18 @@ class MongoDAO {
 
       return paginationData;
     } catch (error) {
-      throw `Error in MongoDAO paginateData: ${error.message}`;
+      throw new Error(`Error in MongoDAO paginateData: ${error.message}`);
     }
-  };
+  }
 
-  deleteOne = async (query) => {
+  async deleteOne(query) {
     try {
       const result = await this.model.deleteOne(query);
       return result;
     } catch (error) {
-      throw `Error en MongoDAO deleteOne: ${error.message}`;
+      throw new Error(`Error en MongoDAO deleteOne: ${error.message}`);
     }
-  };
+  }
 }
 
 module.exports = MongoDAO;
