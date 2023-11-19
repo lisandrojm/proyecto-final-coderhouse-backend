@@ -131,7 +131,7 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
 - Realización de una experiencia de compra completa.
 - Detalles administrativos con los roles de usuarios implementados.
 
-## Variables de entorno <a name="instalacion"></a>
+## Variables de entorno <a name="env"></a>
 
 | Variable               | Descripción                                                   |
 | ---------------------- | ------------------------------------------------------------- |
@@ -226,7 +226,7 @@ cd proyecto_final
 npm install
 ```
 
-- Configura la conexión a la base de datos MongoDB y todas las variables de entorno. (Ver [Variables de entorno](#instalacion))
+- Configura la conexión a la base de datos MongoDB y todas las variables de entorno. (Ver [Variables de entorno](#env))
 
 ```bash
 cp .env.example .env
@@ -258,7 +258,7 @@ Asegúrate de reemplazar `<PUERTO_DE_LA_APP>` con el número de puerto especific
   npm run dev
   ```
 
-## Credenciales de users con roles asignados para testing:
+## Credenciales de users con roles asignados para testing:<a name="credenciales"></a>
 
 Cuando se inicia el servidor, si no existen en la base de datos, se crearán automáticamente usuarios y productos para realizar testings:
 
@@ -459,7 +459,7 @@ Estas dependencias pueden ser instaladas ejecutando el comando `npm install` en 
 
 - Importante: Como el proyecto cuenta con un Middleware de autorización se deben realizar los siguientes pasos en Postman para tener acceso a los endpoints:
 
-  - Ir a la colección proyecto_final/components/auth/login e ingresar las credenciales que correspondan de acuerdo al role que necesitas para acceder al endpoint (Ver credenciales de users con roles asignados para Testings.)
+  - Ir a la colección proyecto_final/components/auth/login e ingresar las credenciales que correspondan de acuerdo al role que necesitas para acceder al endpoint (Ver [Credenciales de users con roles asignados para Testings.](#credenciales))
 
   - Copiar el token obtenido
 
