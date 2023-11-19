@@ -208,55 +208,55 @@ Asegúrate de tener los siguientes requisitos instalados en tu entorno de desarr
 
 Sigue estos pasos para instalar y configurar el proyecto:
 
-1. Clona este repositorio en tu máquina local:
+- Clona este repositorio en tu máquina local:
 
-   ```bash
-   git clone https://github.com/lisandrojm/desafio_cuarta_practica_integradora
-   ```
+```bash
+git clone https://github.com/lisandrojm/desafio_cuarta_practica_integradora
+```
 
-2. Navega al directorio del proyecto:
+- Navega al directorio del proyecto:
 
-   ```bash
-   cd desafio_cuarta_practica_integradora
-   ```
+```bash
+cd desafio_cuarta_practica_integradora
+```
 
-3. Instala las dependencias del proyecto ejecutando el siguiente comando:
+- Instala las dependencias del proyecto ejecutando el siguiente comando:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-4. Configura la conexión a la base de datos MongoDB y todas las variables de entorno en el archivo `.env`. Puedes copiar el archivo `.env.example` y renombrarlo a `.env`, luego actualiza los valores con tu configuración:
+- Configura la conexión a la base de datos MongoDB y todas las variables de entorno en el archivo `.env`. Puedes copiar el archivo `.env.example` y renombrarlo a `.env`, luego actualiza los valores con tu configuración:
 
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+cp .env.example .env
+```
 
-   Asegúrate de tener MongoDB en ejecución , la URL de conexión correcta y todas las variables de entorno configuradas en el archivo `.env`.
+Asegúrate de tener MongoDB en ejecución , la URL de conexión correcta y todas las variables de entorno configuradas en el archivo `.env`.
 
-5. Inicia la aplicación con el siguiente comando:
+- Inicia la aplicación con el siguiente comando:
 
-   ```bash
-   npm start
-   ```
+```bash
+npm start
+```
 
-   Esto iniciará el servidor Node.js y estará escuchando en el puerto especificado en el archivo `.env`.
+Esto iniciará el servidor Node.js y estará escuchando en el puerto especificado en el archivo `.env`.
 
-6. Accede a la aplicación en tu navegador web ingresando la siguiente URL:
+- Accede a la aplicación en tu navegador web ingresando la siguiente URL:
 
-   ```
-   http://localhost:<PUERTO_DE_LA_APP>
-   ```
+```
+http://localhost:<PUERTO_DE_LA_APP>
+```
 
-   Asegúrate de reemplazar `<PUERTO_DE_LA_APP>` con el número de puerto especificado en el archivo `.env`.
+Asegúrate de reemplazar `<PUERTO_DE_LA_APP>` con el número de puerto especificado en el archivo `.env`.
 
-7. Ahora podrás utilizar la vista de Login en la aplicación.
+- Ahora podrás utilizar la vista de Login en la aplicación.
 
-8. Puedes iniciar la aplicación en el entorno de desarrollo con el siguiente comando:
+- Puedes iniciar la aplicación en el entorno de desarrollo con el siguiente comando:
 
-   ```bash
-   npm run dev
-   ```
+  ```bash
+  npm run dev
+  ```
 
 ## Credenciales de users con roles asignados para testing:
 
@@ -307,7 +307,7 @@ premium@correo.com
 1111
 ```
 
-## [STRIPE](https://www.linkedin.com/in/lisandrojm/) - Datos ficticios para simular el pago con tarjeta de crédito:
+## [STRIPE](https://stripe.com/docs/testing) - Datos ficticios para simular el pago con tarjeta de crédito:
 
 #### Card Number:
 
@@ -320,8 +320,6 @@ premium@correo.com
 ```
 1234
 ```
-
-\* 12/34
 
 #### CVC :
 
@@ -337,11 +335,12 @@ premium@correo.com
 
 ## Testing - Mocha + Chai + Supertest
 
-- Realización de módulos de testing para el proyecto principal, utilizando los módulos de mocha, chai y supertest.
-- Incluye 3 (tres) tests desarrollados para:
-  - Router de products.
-  - Router de carts.
-  - Router de sessions.
+Realización de módulos de testing para el proyecto principal, utilizando los módulos de mocha, chai y supertest.
+Incluye 3 (tres) tests desarrollados para:
+
+- Router de products.
+- Router de carts.
+- Router de sessions.
 
 <small>Directorio/s de referencia</small>
 
