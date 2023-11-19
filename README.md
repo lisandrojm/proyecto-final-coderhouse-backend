@@ -100,7 +100,7 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
 
 ### Views
 
-- ADMIN View - Vista donde se puede visualizar, modificar el role y eliminar un usuario. Esta vista únicamente será accesible para el administrador del ecommerc.
+- ADMIN View - Vista donde se puede visualizar, modificar el role, eliminar un usuario y eliminar a los usuarios inactivos en los últimos 2 días. Esta vista únicamente es accesible para el administrador del ecommerce.
 
   - <small>Directorio/s de referencia</small>
 
@@ -112,8 +112,8 @@ Se llevó a cabo la incorporación de Websockets en un chat general y en vistas 
     - `src/components/handlebars/handlebarsServices/handlebarsServices.js`: Servicio del método getAdminDashboardUsers.
 
     - `src/components/users/index.js`: Rutas de users.
-    - `src/components/users/usersController/usersController.js` : Controlador de los métodos getUserViews, updateUser y deletUser.
-    - `src/components/users/usersServices/usersServices.js`: Servicios de de los métodos getUserViews, updateUser y deletUser.
+    - `src/components/users/usersController/usersController.js` : Controlador de los métodos getUserViews, updateUser , deletUser y deleteInactiveUsers.
+    - `src/components/users/usersServices/usersServices.js`: Servicios de de los métodos getUserViews, updateUser , deletUser y deleteInactiveUsers.
 
 ### Endpoint /api/products/:pid
 
