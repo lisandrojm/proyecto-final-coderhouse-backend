@@ -15,8 +15,8 @@ class ProductsRepository extends BaseRepository {
       await product.populate('owner');
       return product;
     } catch (error) {
-      req.logger.error('Error en el método "populateOwner" de ProductsRepository:', error);
-      throw error;
+      req.logger.error('Error en ProductsRepository populateOwner:', error);
+      throw new Error(`Error en ProductsRepository populateOwner: ${error.message}`);
     }
   }
 }

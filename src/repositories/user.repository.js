@@ -22,8 +22,8 @@ class UsersRepository extends BaseRepository {
       }
       return item;
     } catch (error) {
-      req.logger.error('Error en el método "findUserById" de UsersRepository:', error);
-      throw error;
+      req.logger.error('Error en UserRepository findUserById:', error);
+      throw new Error(`Error en UserRepository findUserById: ${error.message}`);
     }
   };
 
@@ -35,8 +35,8 @@ class UsersRepository extends BaseRepository {
       const savedUser = await newUser.save();
       return savedUser;
     } catch (error) {
-      req.logger.error('Error en el método "createUserDTO" de UsersRepository:', error);
-      throw error;
+      req.logger.error('Error en UserRepository createUserDto:', error);
+      throw new Error(`Error en UserRepository createUserDto: ${error.message}`);
     }
   };
 
@@ -45,8 +45,8 @@ class UsersRepository extends BaseRepository {
       const currentDTO = new CurrentDTO(user);
       return currentDTO;
     } catch (error) {
-      req.logger.error('Error en el método "getUserDTO" de UsersRepository:', error);
-      throw error;
+      req.logger.error('Error en UserRepository getUserDto:', error);
+      throw new Error(`Error en UserRepository getUserDto: ${error.message}`);
     }
   };
 
@@ -55,8 +55,8 @@ class UsersRepository extends BaseRepository {
       const principalDataUserDTO = new GetPrincipalDataUser(user);
       return principalDataUserDTO;
     } catch (error) {
-      req.logger.error('Error en el método "getPrincipalDataUserDTO" de UsersRepository:', error);
-      throw error;
+      req.logger.error('Error en UserRepository getPrincipalDataUserDto:', error);
+      throw new Error(`Error en UserRepository getPrincipalDataUserDto: ${error.message}`);
     }
   };
 }

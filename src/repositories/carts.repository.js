@@ -18,8 +18,8 @@ class CartsRepository extends BaseRepository {
       }
       return item;
     } catch (error) {
-      req.logger.error('Error en el método "findCartById" de CartsRepository:', error);
-      throw error;
+      req.logger.error('Error en CartsRepository findCartById:', error);
+      throw new Error(`Error en CartsRepository findCartById: ${error.message}`);
     }
   };
 }
