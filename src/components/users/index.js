@@ -31,6 +31,8 @@ class UsersRoutes extends CustomRouter {
     this.post(`${basePath}/:uid/documents/comprobanteDeDomicilio`, ['ADMIN', 'USER', 'PREMIUM'], uploadDocuments.array('comprobanteDeDomicilio'), usersController.uploadDocuments);
     this.post(`${basePath}/:uid/documents/comprobanteDeEstadoDeCuenta`, ['ADMIN', 'USER', 'PREMIUM'], uploadDocuments.array('comprobanteDeEstadoDeCuenta'), usersController.uploadDocuments);
 
+    this.post(`${basePath}/registerFake`, ['ADMIN'], usersController.createFakeUser);
+
     this.put(`${basePath}/:uid`, ['ADMIN'], usersController.updateUser);
     this.put(`${basePath}/premium/:uid`, ['ADMIN', 'USER', 'PREMIUM'], usersController.updateUserPremium);
 

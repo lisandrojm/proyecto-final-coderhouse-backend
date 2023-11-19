@@ -19,6 +19,7 @@ const path = require('path');
 const PORT = `${config.port}`;
 const bcrypt = require('bcrypt');
 const req = require('../../../utils/logger/loggerSetup');
+const faker = require('faker');
 
 class UsersServices {
   constructor() {
@@ -528,6 +529,55 @@ class UsersServices {
       });
     } catch (error) {
       return res.sendServerError('Error al eliminar el documento');
+    }
+  };
+  createFakeUser = async (req, res) => {
+    const fakeUser = {
+      first_name: faker.name.firstName(),
+      last_name: faker.name.lastName(),
+      email: faker.internet.email(),
+      age: faker.datatype.number({ min: 18, max: 65 }),
+      password: 'password123',
+      role: 'user',
+    };
+
+    const newUser = new User({
+      first_name: fakeUser.first_name,
+      last_name: fakeUser.last_name,
+      email: fakeUser.email,
+      age: fakeUser.age,
+      password: createHash(fakeUser.password),
+      role: fakeUser.role,
+    });
+
+    try {
+      const savedUser = await usersServices.createUserDTO(newUser);
+
+      const userCart = new Cart({
+        user: savedUser._id,
+        products: [],
+      });
+
+      await cartsServices.save(userCart);
+      savedUser.cart = userCart._id;
+      savedUser.last_connection = new Date();
+      await savedUser.save();
+
+      const token = await JWTService.generateJwt({ id: savedUser._id });
+      await usersServices.findByIdAndUpdate(savedUser._id, { token }, { new: true });
+
+      req.logger.info(`Fake user "${fakeUser.first_name}" created successfully. Register for Testing last_connection -> new: ${savedUser.last_connection}`);
+
+      return res.sendCreated({
+        payload: {
+          message: 'Fake user registrado satisfactoriamente',
+          token,
+          data: savedUser,
+        },
+      });
+    } catch (error) {
+      req.logger.error('Error creando fake user:', error);
+      return res.sendServerError('Error crendo fake user');
     }
   };
 }

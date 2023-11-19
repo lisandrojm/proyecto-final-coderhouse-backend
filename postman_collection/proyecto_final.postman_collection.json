@@ -2204,6 +2204,36 @@
 							"response": []
 						},
 						{
+							"name": "createFakeUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"first_name\": \"lisandro\",\r\n\"last_name\": \"lisandro\",\r\n\"email\": \"lisandro1@gmail.com\",\r\n\"age\": 33,\r\n\"password\": \"1111\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "updateUser",
 							"request": {
 								"method": "PUT",

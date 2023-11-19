@@ -1,0 +1,37 @@
+config:
+  plugins:
+    metrics-by-endpoint: {}
+  target: 'http://localhost:8080'
+  phases:
+    - duration: 20
+      arrivalRate: 10
+
+scenarios:
+  - flow:
+      - log: 'Creamos las variables para el usuario de prueba'
+      - get:
+          url: '/api/users/getUsers'
+          capture:
+            json:
+              - first_name
+              - last_name
+              - email
+              - age
+              - password
+              - role
+      - log: 'Registrando al usuario'
+      - post:
+          url: '/api/users/registerFake'
+          json:
+            first_name: '{{ first_name }}'
+            last_name: '{{ last_name }}'
+            email: '{{ email }}'
+            age: '{{ age }}'
+            password: '{{ password }}'
+            role: '{{ role }}'
+      - log: 'Login al usuario'
+      - post:
+          url: '/api/session/auth/login'
+          json:
+            email: '{{ email }}'
+            password: '{{ password }}'

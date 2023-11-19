@@ -14,7 +14,7 @@ const getRandomEmail = () => {
 };
 
 const registerUser = async (user) => {
-  return request(app).post('/api/session/auth/register').send(user);
+  return request(app).post('/api/users/register').send(user);
 };
 
 const loginUser = async (credentials) => {

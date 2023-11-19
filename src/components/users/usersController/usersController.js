@@ -76,6 +76,10 @@ class UsersController {
     const { uid, did } = req.params;
     return await UsersServices.deleteDocumentById(uid, did, res, req);
   };
+
+  createFakeUser = async (req, res) => {
+    return await UsersServices.createFakeUser(req, res);
+  };
 }
 
 module.exports = new UsersController();

@@ -25,14 +25,14 @@ describe('FreeloECOM API / Router de sessions', () => {
       role: 'user',
     };
 
-    await request(app).post('/api/session/auth/register').send(newUser);
+    await request(app).post('/api/users/register').send(newUser);
 
     const loginResponse = await request(app).post('/api/session/auth/login').send({ email: randomEmail, password: 'password123' });
 
     userCookie = loginResponse.headers['set-cookie'][0].split(';')[0].split('=')[1];
   });
 
-  it('POST /api/session/auth/register: Debe crear un usuario correctamente', async function () {
+  it('POST /api/users/register: Debe crear un usuario correctamente', async function () {
     const newUser = {
       first_name: 'User',
       last_name: 'registerTest',
@@ -42,14 +42,14 @@ describe('FreeloECOM API / Router de sessions', () => {
       role: 'user',
     };
 
-    const response = await request(app).post('/api/session/auth/register').send(newUser);
+    const response = await request(app).post('/api/users/register').send(newUser);
 
     expect(response.status).to.equal(201);
     expect(response.body.success).to.be.true;
     expect(response.body.payload.payload.message).to.equal('Usuario agregado correctamente');
     expect(response.body.payload.payload.data.email).to.equal(randomEmailOnlyRegister);
 
-    req.logger.test(`POST /api/session/auth/register ~ User register ~ email: ${response.body.payload.payload.data.email}`);
+    req.logger.test(`POST /api/users/register ~ User register ~ email: ${response.body.payload.payload.data.email}`);
   });
 
   it('POST /api/session/auth/login: Debe loguear a un usuario correctamente y devolver una cookie', async function () {
