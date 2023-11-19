@@ -2,8 +2,6 @@
 /* src/dao/mongo/dao.mongo.js */
 /* ************************************************************************** */
 
-const req = require('../../utils/logger/loggerSetup');
-
 class MongoDAO {
   constructor(model) {
     this.model = model;
@@ -18,7 +16,6 @@ class MongoDAO {
     try {
       return await promise;
     } catch (error) {
-      req.logger.error(`Error: ${errorMessage}`, error);
       throw new Error(`${errorMessage}: ${error.message}`);
     }
   }
@@ -76,7 +73,7 @@ class MongoDAO {
 
     return this.withErrorHandling(document.save(), 'Error en MongoDAO save');
   }
-
+  /*  */
   async countDocuments(query = {}, populateOptions = {}) {
     let countQuery = this.model.countDocuments(query);
 
