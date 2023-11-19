@@ -1,6 +1,6 @@
 # PROYECTO FINAL - Coderhouse/Backend
 
-Este repositorio contiene "El Proyecto Final" del curso de Back-End de Coderhouse.
+Este repositorio contiene "El Proyecto Final" del curso Back-End de Coderhouse.
 
 ## Requerimientos específicos:
 
