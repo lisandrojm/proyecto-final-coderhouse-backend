@@ -59,46 +59,6 @@ Este repositorio contiene "El Proyecto Final" del curso de Back-End de Coderhous
 - Experiencia de compra completa.
 - Detalles administrativos con los roles de usuarios implementados.
 
----
-
-## Configuración del Entorno y Persistencia de datos.
-
-- El servidor se configura utilizando el gestor de comandos Commander para especificar el ambiente de ejecución y el tipo de persistencia.
-
-- Los ejemplos de comandos disponibles son:
-
-  ```bash
-  node index.js -m development -p MONGO
-  ```
-
-  ```bash
-  node index.js -m production -p MEMORY
-  ```
-
-  ```bash
-  node index.js -m staging -p FILESYSTEM
-
-  ```
-
-- \*Los comandos se pueden combinar.Tanto las diferentes variables de entorno como las distintas capas de persistencia.
-
-# Uso Recomendado
-
-Para un funcionamiento completo del sistema, se recomienda utilizar las variables de entorno en modo "development" junto con la capa de persistencia "MONGO".
-
-```bash
-node index.js -m development -p MONGO
-```
-
-Es importante tener en cuenta que aunque se ha implementado la inicialización para los entornos "production" y "staging" junto con las capas de persistencia "MEMORY" y "FILESYSTEM", la funcionalidad completa de estos entornos será implementada en futuras actualizaciones.
-
-<small>Directorio/s de referencia</small>
-
-- `/src/config/index.js`: Configuración de la aplicación.
-- `/src/dao/factory.js`: Configuración de persistencia.
-
----
-
 ## Enlace al sitio activo
 
 - [Deploy en Render](https://proyecto-final-production-e7eb.up.railway.app/) (Funcionalidad de Front-end limitada!)
@@ -109,20 +69,27 @@ Es importante tener en cuenta que aunque se ha implementado la inicialización p
 
 ## Variables de entorno
 
-| Variable            | Descripción                                                                                                                 |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `PORT`              | Puerto sobre el cual se levantará el servidor de manera local. Valores sugeridos: [8080, 3000]                              |
-| `NODE_ENV`          | Define el entorno del servidor. Valores: [development,production,staging]                                                   |
-| `MONGO_URI_PROD`    | URL de conexión a MongoDB para DB de producción.                                                                            |
-| `MONGO_URI_DEV`     | URL de conexión a MongoDB para DB de dev/test. Se sugiere local.                                                            |
-| `SESSION_SECRET`    | Clave o secreto para session.                                                                                               |
-| `JWT_SECRET`        | Clave o secreto para JSON Web Token.                                                                                        |
-| `GH_CLIENT_ID`      | ID de cliente de API de autenticación de Github. Se obtiene en la plataforma (ver sección desarrollo de la plataforma).     |
-| `GH_CLIENT_SECRET`  | Clave o secreto de API de autenticación de Github. Se obtiene como la anterior.                                             |
-| `APP_ID`            | ID de API de autenticación de Github. Se obtiene como las anteriores. No es requerida.                                      |
-| `GMAIL_PASS`        | Clave de acceso a mailing de GMAIL. Se obtiene en la plataforma (ver sección desarrollo de la plataforma).                  |
-| `GMAIL_USER`        | Dirección de correo electrónico que actuará como remitente.                                                                 |
-| `STRIPE_SECRET_KEY` | Clave o secreto de API de Stripe (gestión de págos). Se obtiene en la plataforma (ver sección desarrollo de la plataforma). |
+| Variable               | Descripción                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| `PORT`                 | Puerto de la aplicación. Valores sugeridos: [8080, 3000]      |
+| `COOKIE_KEY`           | Nombre de la cookie key.                                      |
+| `SECRET_KEY`           | Session secret key.                                           |
+| `GITHUB_CLIENT_ID`     | ID de cliente de API de autenticación de Github.              |
+| `GITHUB_SECRET_KEY`    | Clave o secreto de API de autenticación de Github.            |
+| `GITHUB_CALLBACK_URL`  | URL de devolución de llamada de Github.                       |
+| `JWT_SECRET`           | Clave o secreto para JSON Web Token.                          |
+| `JWT_EXPIRES_IN`       | Tiempo de expiración para JSON Web Token en segundos.         |
+| `JWT_ALGORITHM`        | Algoritmo utilizado para JSON Web Token.                      |
+| `NODE_MAILER_USER`     | Usuario de Nodemailer para correo electrónico.                |
+| `NODE_MAILER_PASSWORD` | Contraseña de Nodemailer para correo electrónico.             |
+| `TWILIO_ACCOUNT_SID`   | SID de cuenta de Twilio.                                      |
+| `TWILIO_AUTH_TOKEN`    | Token de autenticación de Twilio.                             |
+| `TWILIO_PHONE_NUMBER`  | Número de teléfono de Twilio.                                 |
+| `STRIPE_PUBLIC_KEY`    | Clave pública de API de Stripe (gestión de pagos).            |
+| `STRIPE_SECRET_KEY`    | Clave o secreto de API de Stripe (gestión de pagos).          |
+| `MONGO_URL_LOCAL`      | URL de conexión a MongoDB para entorno local.                 |
+| `MONGO_URL_ATLAS`      | URL de conexión a MongoDB para entorno de producción (Atlas). |
+| `DB_NAME`              | Nombre de la base de datos en MongoDB.                        |
 
 ## Autor del proyecto
 
