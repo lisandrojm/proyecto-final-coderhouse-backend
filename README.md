@@ -1,5 +1,3 @@
-https://github.com/lisandrojm/proyecto_final/assets/35199683/c1069a92-c98d-417a-9f40-93be0493ddd4
-
 # PROYECTO FINAL - Coderhouse/Backend
 
 ## Descripción
