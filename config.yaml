@@ -1,3 +1,7 @@
+#/* ************************************************************************** */
+#/* src/config.yaml  */
+#/* ************************************************************************** */
+
 config:
   plugins:
     metrics-by-endpoint: {}
@@ -12,26 +16,27 @@ scenarios:
       - get:
           url: '/api/users/getUsers'
           capture:
+            as: 'user_data'
             json:
-              - first_name
-              - last_name
-              - email
-              - age
-              - password
-              - role
+              - first_name: 'captured_first_name'
+              - last_name: 'captured_last_name'
+              - email: 'captured_email'
+              - age: 'captured_age'
+              - password: 'captured_password'
+              - role: 'captured_role'
       - log: 'Registrando al usuario'
       - post:
           url: '/api/users/registerFake'
           json:
-            first_name: '{{ first_name }}'
-            last_name: '{{ last_name }}'
-            email: '{{ email }}'
-            age: '{{ age }}'
-            password: '{{ password }}'
-            role: '{{ role }}'
+            first_name: '{{ user_data.captured_first_name }}'
+            last_name: '{{ user_data.captured_last_name }}'
+            email: '{{ user_data.captured_email }}'
+            age: '{{ user_data.captured_age }}'
+            password: '{{ user_data.captured_password }}'
+            role: '{{ user_data.captured_role }}'
       - log: 'Login al usuario'
       - post:
           url: '/api/session/auth/login'
           json:
-            email: '{{ email }}'
-            password: '{{ password }}'
+            email: '{{ user_data.captured_email }}'
+            password: '{{ user_data.captured_password }}'
