@@ -123,7 +123,7 @@ class Server {
     const server = this.app.listen(PORT, () => {
       req.logger.info(`↑ Servidor en ejecución en http://localhost:${PORT}`);
 
-      generateFakeProducts();
+      /*       generateFakeProducts(); */
     });
 
     this.app.io.attach(server);

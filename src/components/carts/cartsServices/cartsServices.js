@@ -15,11 +15,11 @@ const { Product } = require('../../../models/products'); // Importa el modelo de
 const req = require('../../../utils/logger/loggerSetup');
 
 class CartsServices {
-  constructor() {
+  /*   constructor() {
     this.initializeCartCollection();
-  }
+  } */
 
-  initializeCartCollection = async () => {
+  /*   initializeCartCollection = async () => {
     try {
       const cartCount = await cartsServices.countDocuments();
       if (cartCount === 0) {
@@ -29,7 +29,7 @@ class CartsServices {
       req.logger.error('Error al inicializar la colección de carritos en la base de datos.', error);
     }
   };
-
+ */
   getCarts = async (res) => {
     try {
       const carts = await cartsServices.findAll();
