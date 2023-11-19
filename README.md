@@ -1,6 +1,23 @@
 # PROYECTO FINAL - Coderhouse/Backend
 
-Este repositorio contiene "El Proyecto Final" del curso Back-End de Coderhouse.
+## Descripción
+
+El objetivo de este proyecto fue aplicar los conocimientos adquiridos durante el curso "Programación Backend" de Coderhouse.
+Se integraron los diferentes desafíos del programa, en una APIrest de un e-commerce con las siguientes características:
+
+- Arquitectura SOA (Service-Oriented Architecture).
+- MongoDB.
+- CRUD - Gestión de usuarios, productos y carritos.
+- Motor de plantillas Handlebars.
+- Websockets - Implementado en un Chat general y en vistas del administrador.
+- Sistema de autenticación JSON Web Token (JWT).
+- Cookies - Alojamiento del token JWT.
+- Sistema de roles y políticas - Handle Policies.
+- Passport y session para incluir la autenticación de terceros con GitHub.
+- Ruteo avanzado - Custom Responses y restricción de parámetros.
+- Mailing - Envío de mails a los usuarios luego de determinadas acciones.
+- Test - Testing unitario en modo introductorio para algunas funcionalidades.
+- Pasarela de pago para tarjetas - Implementado con Stripe.
 
 ## Requerimientos específicos:
 
@@ -49,23 +66,11 @@ Este repositorio contiene "El Proyecto Final" del curso Back-End de Coderhouse.
     - `/src/components/products/productsController/productsController.js`: Controlador del método deleteProduct.
     - `/src/components/products/serviceController/serviceController.js`: Servicios del método deleteProduct.
 
-### Objetivos generales
-
-- Proyecto final completo
-
 ### Objetivos específicos
 
-- Vistas necesarias para la realización del flujo completo de compra.
-- Experiencia de compra completa.
+- Implementación de las vistas necesarias para la realización del flujo completo de compra.
+- Realización de una experiencia de compra completa.
 - Detalles administrativos con los roles de usuarios implementados.
-
-## Enlace al sitio activo
-
-- [Deploy en Render](https://proyecto-final-production-e7eb.up.railway.app/) (Funcionalidad de Front-end limitada!)
-
-## Documentación extra
-
-- [Swagger](https://proyecto-final-production-e7eb.up.railway.app/api-docs/) (En desarrollo.)
 
 ## Variables de entorno
 
@@ -90,6 +95,14 @@ Este repositorio contiene "El Proyecto Final" del curso Back-End de Coderhouse.
 | `MONGO_URL_LOCAL`      | URL de conexión a MongoDB para entorno local.                 |
 | `MONGO_URL_ATLAS`      | URL de conexión a MongoDB para entorno de producción (Atlas). |
 | `DB_NAME`              | Nombre de la base de datos en MongoDB.                        |
+
+## Enlace al sitio activo
+
+- [Deploy en Render](https://proyecto-final-production-e7eb.up.railway.app/) (Funcionalidad Front-end básica)
+
+## Documentación extra
+
+- [Swagger](https://proyecto-final-production-e7eb.up.railway.app/api-docs/) (Implementación básica de métodos relevantes del proyecto)
 
 ## Autor del proyecto
 
