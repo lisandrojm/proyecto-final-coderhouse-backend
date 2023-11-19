@@ -1,4 +1,65 @@
-# proyecto_final
+# PROYECTO FINAL - Coderhouse/Backend
+
+Este repositorio contiene "El Proyecto Final" del curso de Back-End de Coderhouse.
+
+## Requerimientos específicos:
+
+### Router /api/users - rutas
+
+- GET / - Obtiene a todos los usuarios y solo devuelve los datos principales: nombre, correo y tipo de cuenta (role).
+
+  - <small>Directorio/s de referencia</small>
+
+    - `/src/components/users/index.js`: Rutas de users.
+    - `/src/components/users/usersController/usersController.js` : Controlador del método getPrincipalDataUser.
+    - `/src/components/users/usersServices/usersServices.js`: Servicios del método getPrincipalDataUser.
+
+- DELETE / - Limpia a todos los usuarios que no hayan tenido conexión en los últimos 2 días y le envía un correo al usuario indicándole que su cuenta ha sido eliminada por inactividad. (Puedes hacer pruebas con el último minuto, por ejemplo. Ver código comentado del método **deleteInactiveUsers**).
+
+  - <small>Directorio/s de referencia</small>
+
+    - `/src/components/users/index.js`: Rutas de users.
+    - `/src/components/users/usersController/usersController.js` : Controlador del método deleteInactiveUsers.
+    - `/src/components/users/usersServices/usersServices.js`: Servicios del método deleteInactiveUsers.
+
+### Views
+
+- ADMIN View - Vista donde se puede visualizar, modificar el role y eliminar un usuario. Esta vista únicamente será accesible para el administrador del ecommerc.
+
+  - <small>Directorio/s de referencia</small>
+
+    - `/src/views/layouts/main.handlebars`: Main del motor de plantillas handlebars.
+    - `/src/views/adminDashboardUsers.handlebars` : Vista del Admin Dashboard de Usuarios.
+
+    - `/src/components/handlebars/index.js`: Rutas de views.
+    - `/src/components/handlebars/handlebarsController/handlebarsController.js` : Controlador del método getAdminDashboardUsers.
+    - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`: Servicio del método getAdminDashboardUsers.
+
+    - `/src/components/users/index.js`: Rutas de users.
+    - `/src/components/users/usersController/usersController.js` : Controlador de los métodos getUserViews, updateUser y deletUser.
+    - `/src/components/users/usersServices/usersServices.js`: Servicios de de los métodos getUserViews, updateUser y deletUser.
+
+### Endpoint /api/products/:pid
+
+- Endpoint que elimina productos modificado. En caso de que el producto eliminado pertenezca a un usuario premium, le envía un correo indicándole que el producto fue eliminado.
+
+  - <small>Directorio/s de referencia</small>
+
+    - `/src/components/products/index.js`: Rutas de productos.
+    - `/src/components/products/productsController/productsController.js`: Controlador del método deleteProduct.
+    - `/src/components/products/serviceController/serviceController.js`: Servicios del método deleteProduct.
+
+### Objetivos generales
+
+- Proyecto final completo
+
+### Objetivos específicos
+
+- Vistas necesarias para la realización del flujo completo de compra.
+- Experiencia de compra completa.
+- Detalles administrativos con los roles de usuarios implementados.
+
+---
 
 ## Configuración del Entorno y Persistencia de datos.
 
