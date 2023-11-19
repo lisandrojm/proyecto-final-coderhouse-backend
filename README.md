@@ -66,7 +66,7 @@ Sistema de roles y políticas utilizando Handle Policies para gestionar con prec
 
 Se llevó a cabo la incorporación de Websockets en un chat general y en vistas del administrador, proporcionando una comunicación bidireccional en tiempo real.
 
-## Requerimientos específicos:
+## Requerimientos específicos de la entrega del proyecto final :
 
 ### Router /api/users - rutas
 
