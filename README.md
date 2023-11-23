@@ -215,7 +215,7 @@ Sigue estos pasos para instalar y configurar el proyecto:
 - Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/lisandrojm/desafio_cuarta_practica_integradora
+git clone https://github.com/lisandrojm/proyecto_final
 ```
 
 - Navega al directorio del proyecto:
