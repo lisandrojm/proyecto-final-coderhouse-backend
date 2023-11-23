@@ -18,7 +18,7 @@ Se implementó la funcionalidad completa de Crear, Leer, Actualizar y Eliminar (
 
 ### Factory
 
-Implementación de la configuración de persistencia utilizando el patrón Factory
+Implementación de la configuración de persistencia utilizando el patrón Factory.
 
 ### DAO
 
