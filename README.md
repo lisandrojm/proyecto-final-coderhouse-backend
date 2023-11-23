@@ -52,7 +52,7 @@ Incorporación de una pasarela de pago segura utilizando Stripe, permitiendo tra
 
 Integración de Passport y session para permitir la autenticación de usuarios a través de GitHub.
 
-### [Railway](https://railway.app/)
+### Railway
 
 Despliegue de la aplicación.
 
