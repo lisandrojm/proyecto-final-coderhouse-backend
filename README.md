@@ -307,7 +307,7 @@ premium@correo.com
 1111
 ```
 
-## [STRIPE](https://stripe.com/docs/testing) - Datos ficticios para simular el pago con tarjeta de crédito:
+## STRIPE - Datos ficticios para simular el pago con tarjeta de crédito:
 
 #### Card Number:
 
