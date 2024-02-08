@@ -2,6 +2,8 @@
 /* src/utils/swagger/swagger.js */
 /* ************************************************************************** */
 
+// src/utils/swagger/swagger.js
+
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const path = require('path');
@@ -9,7 +11,7 @@ const path = require('path');
 const githubRepoLink = 'https://github.com/lisandrojm/proyecto_final';
 const appDeployLink = 'https://proyecto-final-production-e7eb.up.railway.app/';
 
-const options = {
+const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.1',
     info: {
@@ -26,6 +28,13 @@ const options = {
   apis: [path.join(__dirname, '..', '..', 'docs', '**', '**.yaml')],
 };
 
-const specs = swaggerJsdoc(options);
+const specs = swaggerJsdoc(swaggerOptions);
+const options = {
+  customCss: '.swagger-ui .topbar { display: none }',
+};
 
-module.exports = { swaggerUi, specs };
+module.exports = {
+  swaggerUi: swaggerUi,
+  specs: specs,
+  options: options,
+};
