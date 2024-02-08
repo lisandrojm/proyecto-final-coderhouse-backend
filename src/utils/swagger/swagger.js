@@ -28,4 +28,4 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-module.exports = { swaggerUi, specs, options }; // Exportar options
+module.exports = { swaggerUi, specs };
