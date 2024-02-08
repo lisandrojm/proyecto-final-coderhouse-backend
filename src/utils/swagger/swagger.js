@@ -28,4 +28,4 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-module.exports = { swaggerUi, specs };
+module.exports = swaggerUi.setup(specs, { explorer: true }); // Agregar las opciones al método setup y agregar las opciones de estilo necesarias

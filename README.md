@@ -52,7 +52,7 @@ Incorporación de una pasarela de pago segura utilizando Stripe, permitiendo tra
 
 Integración de Passport y session para permitir la autenticación de usuarios a través de GitHub.
 
-### Railway
+### Vercel
 
 Despliegue de la aplicación.
 
@@ -503,11 +503,11 @@ https://github.com/lisandrojm/proyecto_final/assets/35199683/02060eff-54bf-42f6-
 
 ## Enlace al sitio activo
 
-- [Deploy en Render](https://proyecto-final-production-e7eb.up.railway.app/) (Funcionalidad Front-end básica) - Offline por "Período de prueba terminado en Railway")
+- [Deploy en Render](https://proyecto-final-coderhouse-backend.vercel.app/) (Funcionalidad Front-end básica) - Vercel
 
 ## Documentación extra
 
-- [Swagger](https://proyecto-final-production-e7eb.up.railway.app/api-docs/) (Implementación básica de métodos relevantes del proyecto) - Offline por "Período de prueba terminado en Railway")
+- [Swagger](https://proyecto-final-coderhouse-backend.vercel.app/api-docs/) (Implementación básica de métodos relevantes del proyecto) - Vercel
 
 ## Autor del proyecto
 
