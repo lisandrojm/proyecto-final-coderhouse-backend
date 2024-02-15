@@ -24,7 +24,8 @@ const loggerMiddleware = require('./utils/logger/loggerMiddleware');
 const req = require('./utils/logger/loggerSetup');
 
 const ErrorHandler = require('./utils/errors/index');
-const { swaggerUi, specs } = require('./utils/swagger/swagger');
+const swaggerUi = require('swagger-ui-express');
+const swagger = require('./utils/swagger/swagger');
 const { generateFakeProducts } = require('./scripts/generateFakerProducts');
 
 const PORT = `${config.port}` || 3001;
@@ -67,7 +68,7 @@ class Server {
     );
     initializePassport();
 
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+    this.app.use('/api-docs', swaggerUi.serve, swagger);
     this.app.use(passport.initialize());
     this.app.use(passport.session());
     this.app.use(ErrorHandler);
