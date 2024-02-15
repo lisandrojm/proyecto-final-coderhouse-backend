@@ -505,10 +505,6 @@ https://github.com/lisandrojm/proyecto_final/assets/35199683/02060eff-54bf-42f6-
 
 - [Deploy en Render](https://proyecto-final-coderhouse-backend.vercel.app/) (Funcionalidad Front-end básica) - Vercel
 
-## Documentación extra
-
-- [Swagger](https://proyecto-final-coderhouse-backend.vercel.app/api-docs/) (Implementación básica de métodos relevantes del proyecto) - Vercel
-
 ## Autor del proyecto
 
 - [Lisandro Martínez](https://www.linkedin.com/in/lisandrojm/)
