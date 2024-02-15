@@ -3,7 +3,7 @@
 /* ************************************************************************** */
 
 const swaggerJsdoc = require('swagger-jsdoc');
-
+const swaggerUi = require('swagger-ui-express');
 const path = require('path');
 
 const githubRepoLink = 'https://github.com/lisandrojm/proyecto_final';
@@ -22,16 +22,10 @@ const options = {
         jwt: [],
       },
     ],
-    servers: [
-      {
-        url: 'https://proyecto-final-coderhouse-backend.vercel.app/',
-        description: 'My API Documentation',
-      },
-    ],
   },
   apis: [path.join(__dirname, '..', '..', 'docs', '**', '**.yaml')],
 };
 
 const specs = swaggerJsdoc(options);
 
-module.exports = { specs };
+module.exports = { swaggerUi, specs };

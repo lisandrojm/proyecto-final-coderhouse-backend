@@ -24,9 +24,7 @@ const loggerMiddleware = require('./utils/logger/loggerMiddleware');
 const req = require('./utils/logger/loggerSetup');
 
 const ErrorHandler = require('./utils/errors/index');
-const { specs } = require('./utils/swagger/swagger');
-const swaggerUi = require('swagger-ui-express');
-const CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
+const { swaggerUi, specs } = require('./utils/swagger/swagger');
 const { generateFakeProducts } = require('./scripts/generateFakerProducts');
 
 const PORT = `${config.port}` || 3001;
@@ -69,8 +67,7 @@ class Server {
     );
     initializePassport();
 
-    /*     this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs)); */
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL }));
+    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
     this.app.use(passport.initialize());
     this.app.use(passport.session());
     this.app.use(ErrorHandler);
