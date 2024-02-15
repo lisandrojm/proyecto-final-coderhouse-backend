@@ -3,7 +3,7 @@
 /* ************************************************************************** */
 
 const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
+
 const path = require('path');
 
 const githubRepoLink = 'https://github.com/lisandrojm/proyecto_final';
@@ -34,4 +34,4 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-module.exports = { swaggerUi, specs };
+module.exports = { specs };

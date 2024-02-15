@@ -24,7 +24,8 @@ const loggerMiddleware = require('./utils/logger/loggerMiddleware');
 const req = require('./utils/logger/loggerSetup');
 
 const ErrorHandler = require('./utils/errors/index');
-const { swaggerUi, specs } = require('./utils/swagger/swagger');
+const { specs } = require('./utils/swagger/swagger');
+const swaggerUi = require('swagger-ui-express');
 const CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
 const { generateFakeProducts } = require('./scripts/generateFakerProducts');
 
