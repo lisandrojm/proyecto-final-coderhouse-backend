@@ -22,6 +22,12 @@ const options = {
         jwt: [],
       },
     ],
+    servers: [
+      {
+        url: 'https://proyecto-final-coderhouse-backend.vercel.app/',
+        description: 'My API Documentation',
+      },
+    ],
   },
   apis: [path.join(__dirname, '..', '..', 'docs', '**', '**.yaml')],
 };
