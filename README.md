@@ -276,7 +276,7 @@ admin@correo.com
 #### Password:
 
 ```
-1111
+1234
 ```
 
 ### Credenciales de User (role: "user") creado en la DB al iniciar la app:
@@ -290,7 +290,7 @@ user@correo.com
 #### Password:
 
 ```
-1111
+1234
 ```
 
 ### Credenciales de User Premium (role: "premium") creado en la DB al iniciar la app:
@@ -304,7 +304,7 @@ premium@correo.com
 #### Password:
 
 ```
-1111
+1234
 ```
 
 ## STRIPE - Datos ficticios para simular el pago con tarjeta de crédito:
